@@ -145,3 +145,4 @@ See also the list of [contributors](https://github.com/exageraldo/RestSMSGetway/
 
   * Python Community
   * [Tyrone Damasceno](https://github.com/tyronedamasceno) for trying the code and finding bugs
+  * [Sedir Morais](https://github.com/sedir) for reviewing the code and finding errors.

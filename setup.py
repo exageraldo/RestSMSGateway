@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 
 
 setuptools.setup(
-    name='restsmsgetway',
+    name='rest_sms_getway',
     version='0.0.1',
     author='Geraldo Castro',
     author_email='victormatheuscastro@gmail.com',
