@@ -93,7 +93,34 @@ friends_numbers = ['+5511987654321', '+5511987654322', '+5511987654323']
 for friend in friends_numbers: # Bulk SMS 
     client.post_sms(friend, "Hey, let's play BroForce!")
 ```
-  
+
+
+
+## Attention
+
+If you're trying to send lot of messages at once, [read this article](https://forums.androidcentral.com/google-nexus-4/227096-messaging-sending-large-amount-messages.html) about "`Messaging is sending a large amount of messages`".
+
+In my tests, this notification only appears after sending 30 messages. An alternative way out for this is:
+
+```python
+    from rest_sms_getway import RestSMSGetway 
+    import time
+
+    client = RestSMSGetway('http://172.16.19.77:8080')
+
+    for msg_number in range(60):
+        client.post_sms('+5511987654321', 'Your msg here!')
+        if (msg_number+1) % 30 == 0:
+            # Every 30 messages, an interval of 30 seconds is given
+            time.sleep(30)
+        else:
+            # An interval of 1.5 seconds is given for each message
+            time.sleep(1.5)
+```
+
+Also be careful with your phone carrier, they may be slow with the high demand for messages and/or send the messages out of order.
+
+
 
 ## Authors
 
@@ -117,3 +144,4 @@ See also the list of [contributors](https://github.com/exageraldo/RestSMSGetway/
 ## Acknowledgments
 
   * Python Community
+  * [Tyrone Damasceno](https://github.com/tyronedamasceno) for trying the code and finding bugs
