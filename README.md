@@ -104,7 +104,7 @@ See also the list of [contributors](https://github.com/exageraldo/RestSMSGetway/
 ## License
 
  
- This project is licensed under the GNU Lesser General Public License v3 (LGPLv3) - see the [LICENSE.md](LICENSE.md) file for details
+ This project is licensed under the GNU Lesser General Public License v3 (LGPLv3) - see the [LICENSE](LICENSE) file for details
 
   
 
