@@ -53,7 +53,7 @@ Now, you can do what you want (or almost)!
 
 Let's list all conversations available in the mobile phone:
 ```python
-threads = getway.get_thread() 
+threads = client.get_thread() 
 threads.json()
 #OUTPUT
 # {'threads': [{'timestamps': {'update': '1544785173349'}, '_id': '95'},
@@ -71,7 +71,7 @@ threads.json()
 # 'offset': '0'}
 
 
->>> threads = getway.get_thread(limit=2) 
+>>> threads = client.get_thread(limit=2) 
 >>> threads.json()
 #OUTPUT
 # {'threads': [{'timestamps': {'update': '1544785173349'}, '_id': '95'},
@@ -84,7 +84,7 @@ threads.json()
 And now, send a message!
 ```python
 sender = getway.post_sms('+5511987654321', 'Your first message') # Single SMS
-if send.ok: # or status_code == 200
+if sender.ok: # or status_code == 200
     print('Message sent!')
 
 # OR
