@@ -71,7 +71,7 @@ threads.json()
 # 'offset': '0'}
 
 
->>> threads = getway.get_thread() 
+>>> threads = getway.get_thread(limit=2) 
 >>> threads.json()
 #OUTPUT
 # {'threads': [{'timestamps': {'update': '1544785173349'}, '_id': '95'},
@@ -83,9 +83,15 @@ threads.json()
 
 And now, send a message!
 ```python
-sender = getway.post_sms('+5511987654321', 'Your first message')
+sender = getway.post_sms('+5511987654321', 'Your first message') # Single SMS
 if send.ok: # or status_code == 200
     print('Message sent!')
+
+# OR
+
+friends_numbers = ['+5511987654321', '+5511987654322', '+5511987654323']
+for friend in friends_numbers: # Bulk SMS 
+    client.post_sms(friend, "Hey, let's play BroForce!")
 ```
   
 
