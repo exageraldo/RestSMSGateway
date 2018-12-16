@@ -4,7 +4,7 @@ from rest_sms_getway import RestSMSGetway
 client = RestSMSGetway('http://172.16.19.77:8080')
 
 def send_message(phone, message):
-    sms = client.post_sms(phone=phone, message=message)
+    sms = client.send_sms(phone=phone, message=message)
     if sms['ok']:
         get_last_sms = client.get_sms(limit=1)
         last_sms = get_last_sms['messages'][0]

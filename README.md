@@ -83,7 +83,7 @@ Let's list all conversations available in the mobile phone:
 
 And now, send a message!
 ```python
->>> sender = getway.post_sms('+5511987654321', 'Your first message') # Single SMS
+>>> sender = getway.send_sms('+5511987654321', 'Your first message') # Single SMS
 >>> if sender['ok']: # or sender['status_code'] == 200
 ...     print('Message sent!')
 
@@ -91,7 +91,7 @@ And now, send a message!
 
 >>> friends_numbers = ['+5511987654321', '+5511987654322', '+5511987654323']
 >>> for friend in friends_numbers: # Bulk SMS 
-...     client.post_sms(friend, "Hey, let's play BroForce!")
+...     client.send_sms(friend, "Hey, let's play BroForce!")
 ```
 
 
@@ -107,7 +107,7 @@ In my tests, this notification only appears after sending 30 messages. An altern
 >>> import time
 >>> client = RestSMSGetway('http://172.16.19.77:8080')
 >>> for msg_number in range(60):
-...     client.post_sms('+5511987654321', 'Your msg here!')
+...     client.send_sms('+5511987654321', 'Your msg here!')
 ...     if (msg_number+1) % 30 == 0:
 ...         # Every 30 messages, an interval of 30 seconds is given
 ...         time.sleep(30)

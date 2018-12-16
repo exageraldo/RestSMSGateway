@@ -174,7 +174,7 @@ class RestSMSGetway(object):
         response = device_status_response.json()
         return response
 
-    def post_sms(self, phone, message, sim_slot=None):
+    def send_sms(self, phone, message, sim_slot=None):
         """Send SMS. Text from field `message` is sent to phone with a number from field `phone`. Remember that you may be charged for each SMS that you send. Please, use this option wisely.
 
 
