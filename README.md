@@ -53,8 +53,8 @@ Now, you can do what you want (or almost)!
 
 Let's list all conversations available in the mobile phone:
 ```python
-threads = client.get_thread() 
-threads.json()
+>>> client.get_thread() 
+
 #OUTPUT
 # {'threads': [{'timestamps': {'update': '1544785173349'}, '_id': '95'},
 # {'timestamps': {'update': '1544751618760'}, '_id': '94'},
@@ -71,8 +71,8 @@ threads.json()
 # 'offset': '0'}
 
 
->>> threads = client.get_thread(limit=2) 
->>> threads.json()
+>>> client.get_thread(limit=2) 
+
 #OUTPUT
 # {'threads': [{'timestamps': {'update': '1544785173349'}, '_id': '95'},
 # {'timestamps': {'update': '1544751618760'}, '_id': '94'}],
@@ -83,15 +83,15 @@ threads.json()
 
 And now, send a message!
 ```python
-sender = getway.post_sms('+5511987654321', 'Your first message') # Single SMS
-if sender.ok: # or status_code == 200
-    print('Message sent!')
+>>> sender = getway.post_sms('+5511987654321', 'Your first message') # Single SMS
+>>> if sender['ok']: # or sender['status_code'] == 200
+...     print('Message sent!')
 
 # OR
 
-friends_numbers = ['+5511987654321', '+5511987654322', '+5511987654323']
-for friend in friends_numbers: # Bulk SMS 
-    client.post_sms(friend, "Hey, let's play BroForce!")
+>>> friends_numbers = ['+5511987654321', '+5511987654322', '+5511987654323']
+>>> for friend in friends_numbers: # Bulk SMS 
+...     client.post_sms(friend, "Hey, let's play BroForce!")
 ```
 
 
@@ -103,19 +103,17 @@ If you're trying to send lot of messages at once, [read this article](https://fo
 In my tests, this notification only appears after sending 30 messages. An alternative way out for this is:
 
 ```python
-    from rest_sms_getway import RestSMSGetway 
-    import time
-
-    client = RestSMSGetway('http://172.16.19.77:8080')
-
-    for msg_number in range(60):
-        client.post_sms('+5511987654321', 'Your msg here!')
-        if (msg_number+1) % 30 == 0:
-            # Every 30 messages, an interval of 30 seconds is given
-            time.sleep(30)
-        else:
-            # An interval of 1.5 seconds is given for each message
-            time.sleep(1.5)
+>>> from rest_sms_getway import RestSMSGetway 
+>>> import time
+>>> client = RestSMSGetway('http://172.16.19.77:8080')
+>>> for msg_number in range(60):
+...     client.post_sms('+5511987654321', 'Your msg here!')
+...     if (msg_number+1) % 30 == 0:
+...         # Every 30 messages, an interval of 30 seconds is given
+...         time.sleep(30)
+...     else:
+...         # An interval of 1.5 seconds is given for each message
+...         time.sleep(1.5)
 ```
 
 Also be careful with your phone carrier, they may be slow with the high demand for messages and/or send the messages out of order.
