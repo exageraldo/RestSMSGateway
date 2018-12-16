@@ -1,7 +1,7 @@
-from rest_sms_getway import RestSMSGetway
+from rest_sms_getway import SMSGetwayClient
 
 
-client = RestSMSGetway('http://192.168.1.100:8080')
+client = SMSGetwayClient('http://192.168.1.100:8080')
 
 def get_thread_id(phone, pagination=50):
     limit = 0

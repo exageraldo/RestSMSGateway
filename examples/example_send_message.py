@@ -1,7 +1,7 @@
-from rest_sms_getway import RestSMSGetway
+from rest_sms_getway import SMSGetwayClient
 
 
-client = RestSMSGetway('http://172.16.19.77:8080')
+client = SMSGetwayClient('http://172.16.19.77:8080')
 
 def send_message(phone, message):
     sms = client.send_sms(phone=phone, message=message)

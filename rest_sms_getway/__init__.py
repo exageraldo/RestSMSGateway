@@ -1,7 +1,7 @@
 import requests
 
 
-class RestSMSGetway(object):
+class SMSGetwayClient(object):
     """
     REST SMS Gateway allows to change your phone into a powerful SMS Gateway which you can control from a computer. 
     """

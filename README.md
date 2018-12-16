@@ -45,8 +45,8 @@ We don't have test yet.
 ## Examples
 Import and configure the client:
 ```python
->>> from rest_sms_getway import RestSMSGetway 
->>> client = RestSMSGetway('http://172.16.19.77:8080')
+>>> from rest_sms_getway import SMSGetwayClient 
+>>> client = SMSGetwayClient('http://172.16.19.77:8080')
 ```
 
 Now, you can do what you want (or almost)!
@@ -103,9 +103,9 @@ If you're trying to send lot of messages at once, [read this article](https://fo
 In my tests, this notification only appears after sending 30 messages. An alternative way out for this is:
 
 ```python
->>> from rest_sms_getway import RestSMSGetway 
+>>> from rest_sms_getway import SMSGetwayClient
 >>> import time
->>> client = RestSMSGetway('http://172.16.19.77:8080')
+>>> client = SMSGetwayClient('http://172.16.19.77:8080')
 >>> for msg_number in range(60):
 ...     client.send_sms('+5511987654321', 'Your msg here!')
 ...     if (msg_number+1) % 30 == 0:
