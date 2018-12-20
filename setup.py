@@ -8,17 +8,17 @@ with open('README.md') as d:
     long_description = d.read()
 
 setuptools.setup(
-    name='rest_sms_getway',
+    name='rest_sms_gateway',
     version='0.2.0',
     author='Geraldo Castro',
     author_email='victormatheuscastro@gmail.com',
-    packages=['rest_sms_getway'],
+    packages=['rest_sms_gateway'],
     install_requires=reqs,
-    keywords='python api rest sms getway',
+    keywords='python api rest sms gateway',
     long_description=long_description,
     long_description_content_type='text/markdown',
     license='LGPLv3',
-    url='https://github.com/exageraldo/RestSMSGetway',
+    url='https://github.com/exageraldo/RestSMSGateway',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',

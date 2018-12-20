@@ -1,5 +1,5 @@
 
-# RestSMSGetway :love_letter:
+# RestSMSGateway :love_letter:
 
   >Unofficial Library
 
@@ -13,7 +13,7 @@ REST SMS Gateway allows to change your phone into a powerful SMS Gateway which y
 
 > Note: The computer (that will run the script) and your phone have to be connected on the same network. **Android only!**
 
-  First of all, you have to install [Rest SMS Getway](http://bit.ly/RestSMSGetway) on your Android phone.
+  First of all, you have to install [Rest SMS Gateway](http://bit.ly/RestSMSGateway) on your Android phone.
 
 Open the app and press the `start` button. You'll need the IP address shown in there (e.g, `http://172.16.19.77:8080`).
 
@@ -26,7 +26,7 @@ Open the app and press the `start` button. You'll need the IP address shown in t
 Easy-peasy! You only need to run one command
 
 ```
-pip install rest-sms-getway
+pip install rest-sms-gateway
 ```
 
  
@@ -41,8 +41,8 @@ We don't have test yet.
 ## Examples
 Import and configure the client:
 ```python
->>> from rest_sms_getway import SMSGetwayClient 
->>> client = SMSGetwayClient('http://172.16.19.77:8080')
+>>> from rest_sms_gateway import SMSGatewayClient 
+>>> client = SMSGatewayClient('http://172.16.19.77:8080')
 ```
 
 Now, you can do what you want (or almost)!
@@ -79,7 +79,7 @@ Let's list all conversations available in the mobile phone:
 
 And now, send a message!
 ```python
->>> sender = getway.send_sms('+5511987654321', 'Your first message') # Single SMS
+>>> sender = client.send_sms('+5511987654321', 'Your first message') # Single SMS
 >>> if sender['ok']: # or sender['status_code'] == 200
 ...     print('Message sent!')
 
@@ -99,9 +99,9 @@ If you're trying to send lot of messages at once, [read this article](https://fo
 In my tests, this notification only appears after sending 30 messages. An alternative way out for this is:
 
 ```python
->>> from rest_sms_getway import SMSGetwayClient
+>>> from rest_sms_gateway import SMSGatewayClient
 >>> import time
->>> client = SMSGetwayClient('http://172.16.19.77:8080')
+>>> client = SMSGatewayClient('http://172.16.19.77:8080')
 >>> for msg_number in range(60):
 ...     client.send_sms('+5511987654321', 'Your msg here!')
 ...     if (msg_number+1) % 30 == 0:
@@ -124,7 +124,7 @@ Also be careful with your phone carrier, they may be slow with the high demand f
 
   
 
-See also the list of [contributors](https://github.com/exageraldo/RestSMSGetway/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/exageraldo/RestSMSGateway/contributors) who participated in this project.
 
   
 

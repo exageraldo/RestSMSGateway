@@ -1,12 +1,12 @@
 import requests
 
 
-class SMSGetwayClient(object):
+class SMSGatewayClient(object):
     """
     REST SMS Gateway allows to change your phone into a powerful SMS Gateway which you can control from a computer. 
     """
 
-    def __init__(self, url, boundary='RestSMSGetway'):
+    def __init__(self, url, boundary='RestSMSGateway'):
         """Initialize a connection with the server created by your phone.
 
         Args:
