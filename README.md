@@ -26,11 +26,7 @@ Open the app and press the `start` button. You'll need the IP address shown in t
 Easy-peasy! You only need to run one command
 
 ```
-pip install -e /path/to/RestSMSGetway -U 
-```
-or, go to the path and run
-```
-pip install -e . -U 
+pip install rest-sms-getway
 ```
 
  
