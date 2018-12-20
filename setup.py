@@ -9,7 +9,7 @@ with open('README.md') as d:
 
 setuptools.setup(
     name='rest_sms_gateway',
-    version='0.2.0',
+    version='0.2.1',
     author='Geraldo Castro',
     author_email='victormatheuscastro@gmail.com',
     packages=['rest_sms_gateway'],
