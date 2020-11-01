@@ -13,7 +13,7 @@ REST SMS Gateway allows to change your phone into a powerful SMS Gateway which y
 
 > Note: The computer (that will run the script) and your phone have to be connected on the same network. **Android only!**
 
-  First of all, you have to install [Rest SMS Gateway](http://bit.ly/RestSMSGateway) on your Android phone.
+  First of all, you have to install [Rest SMS Gateway](https://apkpure.com/rest-sms-gateway/com.perfness.smsgateway.rest) on your Android phone.
 
 Open the app and press the `start` button. You'll need the IP address shown in there (e.g, `http://172.16.19.77:8080`).
 
